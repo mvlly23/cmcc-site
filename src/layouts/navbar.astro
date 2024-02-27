@@ -1,0 +1,58 @@
+---
+import Icon from '../../public/icon.webp'
+---
+<div class="navbar">
+    <div class="icon">
+        <a href="#"><img alt="CMCC Icon" src="/icon.png" height="60px" width="auto" /></a>
+    </div>
+    <div class="menu">
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/calendar'>Calendar</a></li>
+            <li><a href='/blog'>Blog</a></li>
+        </ul>
+    </div>
+</div>
+<style is:global>
+    .navbar {
+        display: flex;
+        background-color: #333;
+    }
+
+    .icon {
+        margin-right: 2vw;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+	ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    li {
+        float: left;
+    }
+
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: #111;
+    }
+
+    @media only screen and (max-width: 479px) {
+        .mobile-hide{ display: none !important; }
+    }
+</style>
