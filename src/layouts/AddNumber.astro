@@ -1,0 +1,19 @@
+---
+import AddNumbers from '../components/AddNumber'
+---
+<div class="form-container">
+    <AddNumbers client:load />
+    <p class="text-center text-sm leading-loose md:text-left disclaimer">
+        By signing up you agree to receive recurring automated text messages at the cell phone number used when signing up. Msg & data rates apply.
+    </p>
+</div>
+<style>
+    .disclaimer {
+        text-align: center;
+    }
+
+    .form-container {
+        min-height: 70vh;
+        background-color: ghostwhite;
+    }
+</style>
