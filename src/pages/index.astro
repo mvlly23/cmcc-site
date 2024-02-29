@@ -1,8 +1,21 @@
 ---
-import Header from '../layouts/header.astro'
-import NavBar from '../layouts/navbar.astro'
+import '@/css/globals.css'
+
+import Header from '@/layouts/header.astro'
+import NavBar from '@/layouts/navbar.astro'
+import ImgSlider from '@/layouts/ImgSlider.astro'
+import CardGrid from '@/layouts/CardGrid.astro'
+import Footer from '@/layouts/Footer.astro'
 ---
 
 <Header>
-    <NavBar></NavBar>
+    <NavBar />
+    <ImgSlider />
+    <CardGrid />
+    <Footer />
 </Header>
+<style>
+    body {
+        background-color: #C14A36;
+    }
+</style>

@@ -1,0 +1,67 @@
+---
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "@/components/ui/card"
+interface Props {
+  image: string;
+  alt?: string;
+  title: string;
+  text: string;
+  url: string;
+}
+
+const {image, alt = '', title, text, url } = Astro.props;
+---  
+<a href={ url }>
+  <Card className="lg:max-w-md w-full">
+    <div class="card-parent">
+      <CardHeader>
+        <CardContent>
+          <img
+              src={ image }
+              alt={ alt }
+              class="rounded-full card-image"
+          />
+        </CardContent>
+        <CardTitle className="card-title">{ title }</CardTitle>
+        <CardDescription className="card-text">{ text }</CardDescription>
+      </CardHeader>
+    </div>
+  </Card>
+</a>
+<style>
+  .card-parent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+	  align-items: center;
+  }
+
+  .card-image {
+    display: block;
+    width: 5vw;
+    height: 5vw;
+    position: relative;
+    margin-right: 20vw;
+  }
+
+  .card-title {
+    position: absolute;
+    padding-top: 4vh;
+
+    @media (min-width:1025px) {
+      margin-left: 8vw;
+    }
+  }
+
+  .card-text {
+    @media(max-width:700px) {
+     padding-top: 4vh; 
+    }
+  }
+</style>

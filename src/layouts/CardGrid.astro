@@ -1,0 +1,27 @@
+---
+import IndexCard from '../components/IndexCard.astro'
+---
+<div class="grid-parent">
+    <div class="grid">
+        <IndexCard image='icon.png' alt='CMCC icon' title='About CMCC' text='About the Charlotte Metro Communist Club' url='/about/cmcc' />
+        <IndexCard image='cpusa.png' alt='CPUSA icon' title='About CPUSA' text='About the Communist Party of America' url='/about/cpusa' />
+    </div>
+    <div class="grid">
+        <IndexCard image='palestine.png' alt='calendar' title='Events' text='View Upcoming Events' url='/calendar' />
+        <IndexCard image='blog.png' alt='blog' title='Blog' text='View the CMCC Blog' url='/blog/new' />
+    </div>
+</div>
+<style>
+    .grid {
+        display: flex;
+        justify-content: space-evenly;
+        align-content: center;
+        margin-bottom: 5vh;
+    }
+
+    .grid-parent {
+        background-color: ghostwhite;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+    }
+</style>
