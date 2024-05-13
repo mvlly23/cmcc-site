@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -47,8 +46,13 @@ export default function ContactForm() {
         }
     });
 
-    function onSubmit(values: FormValues) {
-        console.log(values);
+    async function onSubmit(values: FormValues) {
+        const response = await fetch('http://localhost:8000/twilio/add_number', {
+            method: 'POST',
+            body: JSON.stringify({phone_number: values.number}),
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        });
+        console.log(response);
     }
 
 
