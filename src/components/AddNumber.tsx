@@ -47,10 +47,10 @@ export default function ContactForm() {
     });
 
     async function onSubmit(values: FormValues) {
-        const response = await fetch('http://localhost:8000/twilio/add_number', {
+        const response = await fetch('https://api.braswell.dev/twilio/add_number', {
             method: 'POST',
             body: JSON.stringify({phone_number: values.number}),
-            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*', Accept: 'application/json' },
         });
         console.log(response);
     }
