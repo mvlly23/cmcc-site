@@ -1,0 +1,32 @@
+---
+import '@/css/globals.css'
+
+import Header from '../../../layouts/header.astro'
+import NavBar from '../../../layouts/navbar.astro'
+import Footer from '../../../layouts/Footer.astro'
+
+const post = await Astro.glob("./discussion_questions.md");
+---
+
+<Header>
+    <NavBar />
+        <div class="content">
+            <div class="viewBox">
+                { post.map((markdown) => <markdown.Content /> ) }
+            </div>
+        </div>
+    <Footer />
+</Header>
+<style>
+    body {
+        background-color: #C14A36;
+        font-family: 'Iosevka Web';
+    }
+    .content {
+        background-color: white;
+    }
+    .viewBox {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+</style>

@@ -8,6 +8,10 @@ module.exports = {
   ],
   prefix: "",
   theme: {
+    fontFamily: {
+      'display': ['Iosevka Web'],
+      'body': ['Iosevka Web'],
+    },
     container: {
       center: true,
       padding: "2rem",
