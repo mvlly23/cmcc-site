@@ -22,22 +22,22 @@
 <p class="mb-1"><strong>Phenomena</strong> - </p>
 <p class="mb-1">Essentially, what you empirically see in a given moment, without transcendentalism.</p>
 <p>From <a href="https://plato.stanford.edu/entries/phenomenology/#PhenPhen" class="text-blue-900">plato.stanford.edu</a> : </p>
-<blockquote>
-<p>&emsp;In a strict empiricist vein, what appears before the mind are sensory data or qualia: either patterns of one’s own sensations (seeing red here now, feeling this ticklish feeling, hearing that resonant bass tone) or sensible patterns of worldly things, say, the looks and smells of flowers (what John Locke called secondary qualities of things). In a strict rationalist vein, by contrast, what appears before the mind are ideas, rationally formed “clear and distinct ideas” (in René Descartes’ ideal). In Immanuel Kant’s theory of knowledge, fusing rationalist and empiricist aims, what appears to the mind are phenomena defined as things-as-they-appear or things-as-they-are-represented (in a synthesis of sensory and conceptual forms of objects-as-known). In Auguste Comte’s theory of science, phenomena (phenomenes) are the facts (faits, what occurs) that a given science would explain.</p>
-<p>In 18th and 19th century epistemology, then, phenomena are the starting points in building knowledge, especially science. Accordingly, in a familiar and still current sense, phenomena are whatever we observe (perceive) and seek to explain.</p>
+<blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+<p class="mb-1">&emsp;In a strict empiricist vein, what appears before the mind are sensory data or qualia: either patterns of one’s own sensations (seeing red here now, feeling this ticklish feeling, hearing that resonant bass tone) or sensible patterns of worldly things, say, the looks and smells of flowers (what John Locke called secondary qualities of things). In a strict rationalist vein, by contrast, what appears before the mind are ideas, rationally formed “clear and distinct ideas” (in René Descartes’ ideal). In Immanuel Kant’s theory of knowledge, fusing rationalist and empiricist aims, what appears to the mind are phenomena defined as things-as-they-appear or things-as-they-are-represented (in a synthesis of sensory and conceptual forms of objects-as-known). In Auguste Comte’s theory of science, phenomena (phenomenes) are the facts (faits, what occurs) that a given science would explain.</p>
+<p>&emsp;In 18th and 19th century epistemology, then, phenomena are the starting points in building knowledge, especially science. Accordingly, in a familiar and still current sense, phenomena are whatever we observe (perceive) and seek to explain.</p>
 </blockquote>
 <br />
 <p class="mb-1"><strong>Scientific Socialism</strong> - </p>
 <p>From <a href="https://en.prolewiki.org/wiki/Scientific_socialism" class="text-blue-900">prolewiki</a>:</p>
-<blockquote>
+<blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
 <p>&emsp;Scientific socialism, a term popularized by Friedrich Engels in the 1800s, refers to an application of socialism that is scientific in nature, and therefore follows the philosophy of Marxism as science is inseparable from socialism, and socialism is inseparable from science. The phrase rose to prominence to distinguish from utopian socialism, which has become a pejorative used to imply naïveté. </p>
 </blockquote>
 <p>You leave behind utopian socialism by being grounded in materialism, marxist economics, and an understanding of class struggle. </p>
 <br />
 <p class="mb-1"><strong>Cartel</strong> - </p>
 <p>From <a href="https://en.prolewiki.org/wiki/Cartel" class="text-blue-900">prolewiki</a>:</p>
-<blockquote>
-<p>&emsp;Cartels are imperialist financial associations that divide the world between monopolist corporations. [1] Cartels are formed by corporations to limit competition and increase prices by creating artificial shortages through low production quotas, stockpiling, and marketing quotas. This is done to destabilize other, often smaller, companies in the market, as to allow for a small group of companies to have unparalleled monopolistic control. </p>
+<blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+<p>&emsp;Cartels are imperialist financial associations that divide the world between monopolist corporations.<a class="text-xs text-blue-600">[1]</a> Cartels are formed by corporations to limit competition and increase prices by creating artificial shortages through low production quotas, stockpiling, and marketing quotas. This is done to destabilize other, often smaller, companies in the market, as to allow for a small group of companies to have unparalleled monopolistic control. </p>
 </blockquote>
 <br />
 <ol class="list-decimal list-outside m-2 ml-6">
