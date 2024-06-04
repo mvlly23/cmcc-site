@@ -4,15 +4,14 @@ import '@/css/globals.css'
 import Header from '../../layouts/header.astro'
 import NavBar from '../../layouts/navbar.astro'
 import Footer from '../../layouts/Footer.astro'
-
-const post = await Astro.glob("./cmcc.md");
 ---
 
 <Header>
     <NavBar />
     <div class="content">
         <div class="viewBox">
-            { post.map((markdown) => <markdown.Content /> ) }
+            <h3 style="text-align: center;" class="font-heading text-3xl font-bold text-gray-900 mb-2">Charlotte Metro Communist Club</h3>
+            <p class="mb-2">The Charlotte Metro Communist Club is a CPUSA club started in 2020. The CMCC is attempting to help the working class organize around the Charlotte Metro Area in North Carolina.</p>
         </div>
     </div>
     <Footer />
