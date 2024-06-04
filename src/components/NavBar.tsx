@@ -12,14 +12,14 @@ import {
  
 const aboutUs: { title: string; href: string; description: string }[] = [
   {
-    title: 'About CMCC',
-    href: '/about/cmcc',
-    description: 'About the Charlotte Metro Communist Club'
-  },
-  {
     title: 'About CPUSA',
     href: '/about/cpusa',
     description: 'About the Communist Party of America'
+  },
+  {
+    title: 'About CMCC',
+    href: '/about/cmcc',
+    description: 'About the Charlotte Metro Communist Club'
   },
 ]
 
