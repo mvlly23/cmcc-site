@@ -1,0 +1,68 @@
+---
+import '@/css/globals.css'
+
+import Header from '../../../layouts/header.astro'
+import NavBar from '../../../layouts/navbar.astro'
+import Footer from '../../../layouts/Footer.astro'
+---
+
+<Header>
+    <NavBar />
+    <div class="content">
+        <div class="viewBox">
+            <h2 style="text-align: center;" class="font-heading text-3xl font-bold text-gray-900 mb-2">Reform or Revolution</h3>
+            <h4 id="definitions" class="font-heading text-3xl font-bold text-gray-900 mb-4">Definitions</h4>
+            <ul class="list-disc list-outside m-2 ml-6">
+                <li>
+                    <p><strong>Dialectic</strong> - The process of determining some truth by going back and forth between two seemingly contradictory ideas.</p>
+                    <img src="/public/dialectics.png" alt="Dialectics" />
+                    <p>Source: <a href="https://www.bookofthrees.com/hegel-and-the-trinity/">https://www.bookofthrees.com/hegel-and-the-trinity/</a></p>
+                </li>
+                <li class="mt-3">
+                    <p><strong>Fourierism</strong> - A utopian socialist doctrine put forth by Charles Fourier. He believed bourgeois society got in the way of God's divine purpose for humans and was developmentally behind barbarism in many ways. It put forth that we need to change political, economic, and social life to cater to the individual. He believed this would be achieved via communal societies.</p>
+                </li>
+                <li class="mt-3">
+                    <p><strong>Phalansteries</strong> - A self-sustaining communal group under Fourierism.</p>
+                </li>
+            </ul>
+            <h4 id="discusion-questions" class="font-heading text-3xl font-bold text-gray-900 mt-6 mb-2">Discussion Questions</h4>
+            <ul class="list-disc list-outside m-2 ml-6">
+                <li>
+                    <p>How have technological innovations affected workers today?</p>
+                </li>
+                <li class="mt-2">
+                    <p>What are the limitations of only fighting for economic reforms?</p>
+                </li>
+                <li class="mt-2">
+                    <p>How do some of Luxemburg's ideas on the distribution of wealth play out today?</p>
+                </li>
+                <li class="mt-2">
+                    <p>What has changed about the role of tariffs since 1900? What has stayed the same?</p>
+                </li>
+                <li class="mt-2">
+                    <p>As "parliamentary action" has developed, how can we see some of the shortcomings of Bernstein's ideas of labor reform?</p>
+                </li>
+                <li class="mt-2">
+                    <p>How have modern unions internalized some of Luxemburg's ideas?</p>
+                </li>
+                <li class="mt-2">
+                    <p>How have state actions during times of crises illuminated the necessity of economic crises in modern capitalism?</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <Footer />
+</Header>
+<style>
+    body {
+        background-color: #C14A36;
+        font-family: 'Iosevka Web';
+    }
+    .content {
+        background-color: white;
+    }
+    .viewBox {
+        margin-left: 2vw;
+        margin-right: 2vw;
+    }
+</style>
