@@ -13,6 +13,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import { useEffect } from "react";
 
 const regex_exp : RegExp = new RegExp("[a-zA-Z]", "g");
 
@@ -52,7 +53,8 @@ export default function ContactForm() {
             body: JSON.stringify({phone_number: values.number}),
             headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         });
-        console.log(response);
+        form.reset();
+        location.reload();
     }
 
 
