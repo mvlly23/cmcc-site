@@ -9,7 +9,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
- 
+
 const aboutUs: { title: string; href: string; description: string }[] = [
   {
     title: 'About CPUSA',
@@ -23,16 +23,44 @@ const aboutUs: { title: string; href: string; description: string }[] = [
   },
 ]
 
-const blogs: { title: string; href: string; description: string }[] = [
+const blogLoggedOut: { title: string; href: string; description: string }[] = [
   {
-    title: 'New Entries',
-    href: '/blog/new',
-    description: 'New blog entries'
+    title: 'Read',
+    href: '/blog/grid',
+    description: 'View blog posts'
   },
   {
     title: 'Search',
     href: '/blog/search',
-    description: 'Search blog posts'
+    description: 'Search Blog Posts'
+  },
+  {
+    title: 'Login',
+    href: '/blog/login',
+    description: 'Login/Register'
+  },
+]
+
+const blogLoggedIn: { title: string; href: string; description: string }[] = [
+  {
+    title: 'Read',
+    href: '/blog/grid',
+    description: 'View blog posts'
+  },
+  {
+    title: 'Search',
+    href: '/blog/search',
+    description: 'Search Blog Posts'
+  },
+  {
+    title: 'New',
+    href: '/blog/new',
+    description: 'Create a Blog Post'
+  },
+  {
+    title: 'Update',
+    href: '/blog/update',
+    description: 'Update a Blog Post'
   },
 ]
 
@@ -43,6 +71,16 @@ const bookClub: { title: string; href: string; description: string }[] = [
     description: 'Reform or Revolution notes'
   }
 ]
+
+let loggedIn = false;
+document.cookie.split(";")
+    .map(str => str.trim().split(/=(.+)/))
+    .forEach((cookie) => {
+      if (cookie[0] === 'jwt') {
+        loggedIn = true;
+      }
+    });
+const blogs = loggedIn ? blogLoggedIn : blogLoggedOut;
  
 export function NavBar() {
   // flex select-none rounded-md bg-gradient-to-b from-muted/50 to-muted p-1 no-underline outline-none focus:shadow-md

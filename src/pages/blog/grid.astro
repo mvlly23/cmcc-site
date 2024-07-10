@@ -1,0 +1,64 @@
+---
+import qs from "qs";
+import '@/css/globals.css'
+
+import Header from '../../layouts/header.astro'
+import NavBar from '../../layouts/navbar.astro'
+import Footer from '../../layouts/Footer.astro'
+import Layout from "../../layouts/Blog.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
+
+let url = "https://blog.cmcc.ml/api/posts";
+
+const query = qs.stringify({
+  populate: {
+    image: {
+      fields: ["name", "width", "height", "url"],
+    },
+    author: {
+      populate: {
+        bioImage: {
+          fields: ["name", "width", "height", "url"],
+        },
+      },
+    },
+    category: {
+      populate: true,
+    },
+  },
+});
+
+const posts = await fetch(url + "?" + query).then(async (response) => {
+  try {
+    const json = await response.json();
+    return json;
+  } catch(error) {
+    console.error(error);
+    return {};
+  }
+});
+---
+
+<Header>
+    <NavBar />
+        <Layout title="CMCC">
+            <BlogGrid posts={posts} search={false} />
+        </Layout>
+        <hr />
+    <Footer />
+</Header>
+<style>
+    body {
+        background-color: #C14A36;
+        font-family: 'Iosevka Web';
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
+    }
+</style>

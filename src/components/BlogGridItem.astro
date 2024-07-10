@@ -1,0 +1,56 @@
+---
+const { post } = Astro.props;
+const { slug, image, excerpt } = post.attributes;
+const url = 'https://blog.cmcc.ml';
+
+const author = post.attributes.author;
+const authorName = author.data.attributes.Name;
+let authorImage = '/default-user.png';
+if (author.data.attributes?.bioImage) {
+  authorImage = url + author.data.attributes.bioImage.data.attributes.url;
+}
+
+let postImage = '/default-blog-post-img.png';
+if (image.data?.attributes?.url) {
+  postImage = url + image.data.attributes.url;
+}
+
+const title = post.attributes.Title;
+---
+
+<div
+  class="rounded-md overflow-hidden shadow-sm p-4 transition-transform h-auto"
+>
+  <a href={`/post/${slug}`}>
+    <div class="rounded-md h-48 w-full overflow-hidden">
+      <img
+        class="object-cover w-full h-full"
+        src={postImage}
+      />
+    </div>
+    <div>
+      <h1 class="my-2 text-xl">{title}</h1>
+      <p class="my-2 text-gray-700 line-clamp-3">{excerpt}</p>
+    </div>
+    <div class="flex justify-between my-4 items-center">
+      <div class="flex space-x-2 items-center overflow-hidden">
+        <img
+          class="inline-block h-8 w-8 rounded-full"
+          src={authorImage}
+          alt="author picture"
+        />
+        <p class="font-medium text-xs cursor-pointer">
+          {authorName}
+        </p>
+      </div>
+      <div class="inline-flex rounded-md">
+        <a
+          href={`/post/${slug}`}
+          class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-400"
+        >
+          Read article
+        </a>
+      </div>
+    </div>
+  </a>
+</div>

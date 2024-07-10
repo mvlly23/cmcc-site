@@ -1,0 +1,59 @@
+---
+import qs from "qs";
+
+import Header from '../../layouts/header.astro';
+import NavBar from '../../layouts/navbar.astro';
+import Footer from '../../layouts/Footer.astro';
+import Layout from "../../layouts/Blog.astro";
+import SingleBlogItem from "../../components/Blog.astro";
+
+export async function getStaticPaths() {
+    let url = "https://blog.cmcc.ml/api/posts";
+
+    const query = qs.stringify({
+    populate: {
+        image: {
+            fields: ["name", "width", "height", "url"],
+        },
+        author: {
+            populate: {
+                bioImage: {
+                    fields: ["name", "width", "height", "url"],
+                },
+            },
+        },
+        category: {
+            populate: true,
+        },
+    },
+});
+
+  const data = await fetch(url + "?" + query).then(response => response.json());
+  return data.data.map((post: any) => {
+    return {
+      params: { slug: post.attributes.slug },
+      props: { post },
+    };
+  });
+}
+
+const { post }: any = Astro.props;
+---
+<Header>
+  <NavBar />
+    <div id="main">
+      <Layout title={post.attributes.title}>
+        <SingleBlogItem post={post} />
+      </Layout>
+    </div>
+  <Footer />
+</Header>
+<style>
+  #main {
+    background-color: #FFF;
+  }
+  body {
+      background-color: #C14A36;
+      font-family: 'Iosevka Web';
+  }
+</style>

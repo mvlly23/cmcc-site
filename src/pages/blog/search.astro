@@ -1,18 +1,88 @@
 ---
-import '@/css/globals.css'
+import qs from "qs";
+import '@/css/globals.css';
 
-import Header from '../../layouts/header.astro'
-import NavBar from '../../layouts/navbar.astro'
-import Footer from '../../layouts/Footer.astro'
+import Header from '../../layouts/header.astro';
+import NavBar from '../../layouts/navbar.astro';
+import Footer from '../../layouts/Footer.astro';
+import Layout from "../../layouts/Blog.astro";
+import BlogGrid from "../../components/BlogGrid.astro";
+
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+// TODO: aaaaaaaaa need to get it to run like in the component, but get the post query data or input to this page. Could technically store the input as a cookie but that seems like a bit much and not the best implementation
+let input = '';
+let posts = {};
+
+const searchPosts = async() => {
+    let url = "https://blog.cmcc.ml/api/posts";
+    const query = qs.stringify({
+        sort: 'Title',
+        populate: {
+            author: {
+                fields: ['Name']
+            }
+        },
+        filters: {
+            $or: [
+                {
+                    Title: {
+                        $containsi: input
+                    },
+                },
+                {
+                    author: {
+                        Name: {
+                            $eq: input
+                        }
+                    },
+                },
+                {
+                    Content: {
+                        $containsi: input
+                    }
+                }
+            ],
+            Visibility: {
+                $eq: true
+            },
+        }
+    });
+
+    posts = await fetch(url + "?" + query).then((response) => {
+        return response.json();
+    });
+}
+
+function updateInput({ target = {value: ''} }) {
+    input = target.value;
+}
 ---
 
 <Header>
-    <NavBar />
-    <Footer />
+  <NavBar />
+    <div class="flex justify-center items-center space-x-2">
+      <Input type="text" className="px-3 py-2 w-80" placeholder="Search..." onChange={ updateInput } />
+      <Button className="px-3 py-2" onClick={ searchPosts }>Search</Button>
+  </div>
+  <Layout title="CMCC">
+    <BlogGrid posts={ posts } search = { true } />
+  </Layout>
+  <hr />
+  <Footer />
 </Header>
 <style>
     body {
         background-color: #C14A36;
         font-family: 'Iosevka Web';
+    }
+
+    hr {
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 1px solid #ccc;
+        margin: 1em 0;
+        padding: 0;
     }
 </style>

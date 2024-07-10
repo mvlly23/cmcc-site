@@ -4,7 +4,7 @@ module.exports = {
   content: [
     './pages/**/*.{ts,tsx}',
     './components/**/*.{ts,tsx}',
-    './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'
+    './src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx,vue}'
   ],
   prefix: "",
   theme: {

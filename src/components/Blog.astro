@@ -1,0 +1,64 @@
+---
+import { marked } from "marked";
+import { formatDistance, format } from 'date-fns';
+
+const { post } = Astro.props;
+
+const { image, content, publishedAt } = post.attributes;
+const url = 'https://blog.cmcc.ml';
+
+const author = post.attributes.author;
+const authorName = author.data.attributes.Name;
+let authorImage = '/default-user.png';
+if (author.data.attributes?.bioImage) {
+  authorImage = url + author.data.attributes.bioImage.data.attributes.url;
+}
+
+let postImage = null;
+if (image !== undefined) {
+  if (image.data?.attributes?.url) {
+    postImage = url + image.data.attributes.url;
+  }
+}
+---
+
+<div class="container mx-auto">
+  <div class="w-full flex justify-end rounded-md">
+    <a
+      href={`/blog/grid`}
+      class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-md text-white bg-yellow-500 hover:bg-yellow-400"
+    >
+      Back
+    </a>
+  </div>
+  <div class="my-4 text-center">
+    <h1 class="text-center text-4xl leading-tight text-gray-900 my-4 font-bold">
+      {post.attributes['Title']}
+    </h1>
+    <div class="text-gray-500 flex justify-center items-center space-x-2">
+      <span class="flex space-x-2 items-center overflow-hidden">
+        {
+          authorImage ? <img
+            class="inline-block h-8 w-8 rounded-full ring-2 ring-white"
+            src={authorImage}
+            alt="author picture"
+          /> : ""
+        }
+        <p class="text-s cursor-pointer">
+          {authorName}
+        </p>
+      </span>
+      <span>&middot;</span>
+      <span>{format(new Date(publishedAt), 'MM/dd/yyyy')}</span>
+    </div>
+  </div>
+  {
+    postImage ? <img
+      class="object-cover w-full h-full"
+      src={postImage}
+    /> : ""
+  }
+  <article class=" prose max-w-full w-full my-4">
+    <div class="rich-text" set:html={marked.parse(post.attributes['Content'])}  />
+  </article>
+</div>

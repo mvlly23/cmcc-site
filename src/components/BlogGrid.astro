@@ -1,0 +1,12 @@
+---
+import BlogGridItem from "./BlogGridItem.astro";
+const { posts, search } = Astro.props;
+---
+
+<div class="grid grid-cols-3 gap-6">
+    {
+        posts.data && posts.data.length > 0
+            ? posts.data.map((post: any) => <BlogGridItem post={post} /> )
+            : (search ? "": "No posts founds")
+    }
+</div>
