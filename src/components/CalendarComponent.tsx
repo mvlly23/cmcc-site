@@ -4,7 +4,7 @@ import { Calendar } from "@/components/ui/calendar"
 
 export default function CalendarComponent() {
     const selectedDate = new Date();
-    const dates = [1, 12, 26, 27, 30];
+    const dates = [11, 22, 28];
     var arrayMatcher = [];
     const daysInMonth = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 0).getDate();
     for (var i = 0; i < daysInMonth; i++) {
@@ -27,11 +27,9 @@ export default function CalendarComponent() {
             </div>
             <div className="events">
                 <ul className="list-disc list-outside m-2 ml-6">
-                    <li>June 1st - Palestine Rally</li>
-                    <li>June 12th - Flyering</li>
-                    <li>June 26th - Tabeling</li>
-                    <li>June 27th - Monthly Meeting</li>
-                    <li>June 30th Coffee with Comrades</li>
+                    <li>July 11th - Flyering</li>
+                    <li>July 22nd - Flyering</li>
+                    <li>July 28th - Coffee w/ Comrades</li>
                 </ul>
             </div>
         </div>
