@@ -34,9 +34,7 @@ export default function SearchBar() {
 
     function onSubmit(values: FormValues) {
         const slug = _.kebabCase(values.search.replace(/[\W_]+/g, '-'));
-        // TODO Fix before publishing
-        // window.location.href = 'https://cmcc.ml/blog/search/?search=' + slug;
-        window.location.href = 'http://localhost:4321/blog/search/results/?search=' + slug; 
+        window.location.href = 'https://cmcc.ml/blog/search/?search=' + slug;
     }
 
 

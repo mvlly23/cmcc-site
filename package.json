@@ -45,6 +45,7 @@
   },
   "devDependencies": {
     "@types/babel__core": "^7.20.5",
+    "@types/lodash": "^4.17.7",
     "@types/qs": "^6.9.15"
   }
 }

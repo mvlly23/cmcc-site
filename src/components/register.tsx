@@ -55,7 +55,7 @@ export function RegisterForm() {
     if (response.hasOwnProperty('jwt')) {
       //STORE ME
       console.log(response.jwt);
-      window.location = '/blog/grid';
+      window.location.href = 'https://cmcc.ml/blog/grid';
     } else {
       form.setValue("password", "");
       form.setValue("confirmPassword", "");

@@ -66,6 +66,11 @@ const blogLoggedIn: { title: string; href: string; description: string }[] = [
 
 const bookClub: { title: string; href: string; description: string }[] = [
   {
+    title: 'Blood In My Eye',
+    href: '/book-club/BloodInMyEye',
+    description: 'Blood In My Eye notes'
+  },
+  {
     title: 'Reform or Revolution',
     href: '/book-club/RoR',
     description: 'Reform or Revolution notes'

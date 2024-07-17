@@ -44,7 +44,7 @@ export function LoginForm() {
     if (response.hasOwnProperty('jwt')) {
       document.cookie = 'jwt = ' + response.jwt;
       document.cookie = 'user = ' + response.user.username;
-      window.location = '/blog/grid';
+      window.location.href = 'https://cmcc.ml/blog/grid';
     } else {
       // Failed login
       form.setValue("password", "");
