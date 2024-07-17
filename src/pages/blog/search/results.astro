@@ -2,15 +2,16 @@
 import qs from "qs";
 import '@/css/globals.css'
 
-import Header from '../../layouts/header.astro'
-import NavBar from '../../layouts/navbar.astro'
-import Footer from '../../layouts/Footer.astro'
-import Layout from "../../layouts/Blog.astro";
-import BlogGrid from "../../components/BlogGrid.astro";
+import Header from '@/layouts/header.astro'
+import NavBar from '@/layouts/navbar.astro'
+import Footer from '@/layouts/Footer.astro'
+import Layout from "@/layouts/Blog.astro";
+import BlogGrid from "@/components/BlogGrid.astro";
 
 let url = "https://blog.cmcc.ml/api/posts";
-
+const input = Astro.url.searchParams.get('search') || '';
 const query = qs.stringify({
+  sort: 'Title',
   populate: {
     image: {
       fields: ["name", "width", "height", "url"],
@@ -26,6 +27,30 @@ const query = qs.stringify({
       populate: true,
     },
   },
+  filters: {
+        $or: [
+            {
+                Title: {
+                    $containsi: input
+                },
+            },
+            {
+                author: {
+                    Name: {
+                        $eq: input
+                    }
+                },
+            },
+            {
+                Content: {
+                    $containsi: input
+                }
+            }
+        ],
+        Visibility: {
+            $eq: true
+        },
+    }
 });
 
 const posts = await fetch(url + "?" + query).then(async (response) => {

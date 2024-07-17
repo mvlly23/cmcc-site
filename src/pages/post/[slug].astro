@@ -8,6 +8,7 @@ import Layout from "../../layouts/Blog.astro";
 import SingleBlogItem from "../../components/Blog.astro";
 
 export async function getStaticPaths() {
+    const input = Astro.url.searchParams.get('search') || '';
     let url = "https://blog.cmcc.ml/api/posts";
 
     const query = qs.stringify({
